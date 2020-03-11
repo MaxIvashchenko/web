@@ -1,0 +1,31 @@
+.answersList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.answerItem {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background: (rgba(255, 255, 255, .9));
+    transition: background-color 0.7s ease-in-out;
+
+}
+
+.answerItem:hover {
+background-color: rgb(213, 224, 146, 0.5);
+color: rgb(29, 15, 15);
+  
+}
+
+
+.success {
+    background: rgba(161, 240, 69, 0.7);
+}
+
+.error {
+    background: rgba(211, 45, 45, 0.7);
+}
