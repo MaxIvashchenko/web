@@ -94,6 +94,9 @@ export default class Quiz extends React.Component {
             answerState: null, // {[id]: 'success' or 'error'}
         })
     }
+    componentDidMount(){
+        console.log('quiz id = ' , this.props.match.params.id)
+    }
     render() {
 
         return (

@@ -18,6 +18,7 @@ export default class Layout extends React.Component {
 
     render() {
         return (
+            
             <div className='layout'>
                 <Drawer
                     isOpen={this.state.menu}
@@ -29,6 +30,7 @@ export default class Layout extends React.Component {
                     isOpen={this.state.menu}
                 />
                 <main>
+
                     {this.props.children}
                 </main>
             </div>
