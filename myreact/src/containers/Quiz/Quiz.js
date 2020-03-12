@@ -19,26 +19,26 @@ export default class Quiz extends React.Component {
                     { text: 'Киев', id: 4 }
                 ]
             },
-            {
-                question: 'Чей Крым?',
-                rightAnswerId: 1,
-                answers: [
-                    { text: 'Наш', id: 1 },
-                    { text: 'Не наш', id: 2 },
-                    { text: 'Их', id: 3 },
-                    { text: 'Ничей', id: 4 }
-                ]
-            },
-            {
-                question: 'Какой по счету президент Зеленский?',
-                rightAnswerId: 2,
-                answers: [
-                    { text: 'четвертый', id: 1 },
-                    { text: 'четвертый, если забыть пороха', id: 2 },
-                    { text: 'кто такой Зеленский', id: 3 },
-                    { text: 'третий', id: 4 }
-                ]
-            }
+            // {
+            //     question: 'Чей Крым?',
+            //     rightAnswerId: 1,
+            //     answers: [
+            //         { text: 'Наш', id: 1 },
+            //         { text: 'Не наш', id: 2 },
+            //         { text: 'Их', id: 3 },
+            //         { text: 'Ничей', id: 4 }
+            //     ]
+            // },
+            // {
+            //     question: 'Какой по счету президент Зеленский?',
+            //     rightAnswerId: 2,
+            //     answers: [
+            //         { text: 'четвертый', id: 1 },
+            //         { text: 'четвертый, если забыть пороха', id: 2 },
+            //         { text: 'кто такой Зеленский', id: 3 },
+            //         { text: 'третий', id: 4 }
+            //     ]
+            // }
         ]
     }
 

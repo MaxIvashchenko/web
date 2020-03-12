@@ -1,11 +1,9 @@
-body {
-  background: linear-gradient(80deg, #09327e 0%, #83a9d4 100%);
-}
 
 .quiz {
   display: flex;
   justify-content: center;
-  padding: 100px 0;
+  padding-top: 100px;
+  flex-grow: 1;
   width: 100%;
 }
 
@@ -17,4 +15,19 @@ body {
 
 .quizWrapper {
   width: 600px;
+}
+
+.layout {
+height: 100vh;
+display: flex;
+flex-direction: column;
+background: linear-gradient(80deg, #09327e 0%, #83a9d4 100%);
+
+}
+
+.layout main{
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+
 }

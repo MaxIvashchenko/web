@@ -1,5 +1,6 @@
 import React from 'react'
 import './FinishedQuiz.css'
+import Button from '../Button/Button';
 
 export default function FinishedQuiz({ results, quiz, onRetry }) {
     const successCounter = Object.keys(results).reduce((total, key) => {
@@ -24,7 +25,7 @@ export default function FinishedQuiz({ results, quiz, onRetry }) {
                         return (
                             <li key={index}>
 
-                                <strong>{index + 1} </strong>
+                                <strong>{index + 1}. </strong>
                                 {quizItem.question}
                                 <i className={classes.join(' ')} />
                             </li>
@@ -34,7 +35,12 @@ export default function FinishedQuiz({ results, quiz, onRetry }) {
             </ul>
 
             <p>Правильно: {successCounter} of {quiz.length}</p>
-            <div><button onClick={onRetry}>AGAIN</button></div>
+            
+            <div>
+
+            <Button onClick={onRetry} type='primary'>Повторить</Button>
+            <Button  type='successBtn'>Перейти в список тестов</Button>
+            </div>
         </div>
     )
 }
