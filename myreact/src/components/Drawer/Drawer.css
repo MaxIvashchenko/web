@@ -7,9 +7,9 @@
     max-width: 300px;
     padding: 20px 10px;
     box-sizing: border-box;
-    background: white;
+    background: rgb(179, 209, 226);
     transform: translateX(0px);
-    transition: transfrom .2s ease-in;
+    transition: transform .32s ease-in;
     z-index: 90;
 }
 
@@ -27,16 +27,16 @@
     margin-bottom: 15px;
 }
 
-.drawer ul li a {
-    color: #363f54;
-    font-size: 30px;
-    text-decoration: none;
-    background-color: white;
-    position: relative;
-    padding: 0 20px 10px 20px;
-    transition: opacity .3s;
+.drawer ul li a{
+color: #363f54;
+font-size: 30px;
+text-decoration: none;
+background-color: white;
+position: relative;
+padding:  0 20px 10px 20px;
+transition: opacity .3s;
 }
 
-.drawer ul li a:hover {
-    opacity: .7;
+.drawer ul li a:hover{
+opacity: .7;
 }

@@ -12,12 +12,16 @@ export default class Layout extends React.Component {
             menu: !this.state.menu
         })
     }
+    menuCloseHandler= () => {
+        this.setState({menu: false})
+    }
 
     render() {
         return (
             <div className='layout'>
                 <Drawer
                     isOpen={this.state.menu}
+                    onClose={this.menuCloseHandler}
                 />
 
                 <MenuToggle
