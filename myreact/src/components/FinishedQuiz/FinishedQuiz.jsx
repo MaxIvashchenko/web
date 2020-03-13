@@ -1,6 +1,6 @@
 import React from 'react'
 import './FinishedQuiz.css'
-import Button from '../Button/Button';
+import Button from '../UI/Button/Button';
 import { Link } from 'react-router-dom'
 
 export default function FinishedQuiz({ results, quiz, onRetry }) {
