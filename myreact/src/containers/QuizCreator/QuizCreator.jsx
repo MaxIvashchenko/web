@@ -4,6 +4,7 @@ import Button from '../../components/UI/Button/Button'
 import { createControl, validate, validateForm } from '../../form/formFramework'
 import Input from '../../components/UI/input/Input'
 import Select from '../../components/UI/Select/Select'
+import axios from '../../axios/axios-quiz'
 
 function createOptionControl(num) {
     return createControl({
@@ -55,9 +56,9 @@ export default class QuizCreator extends Component {
             const control = this.state.formControls[controlName];
 
             return (
-                <React.Fragment key={controlName+index}>
+                <React.Fragment key={controlName + index}>
                     <Input
-                        
+
                         label={control.label}
                         value={control.value}
                         valid={control.valid}
@@ -76,12 +77,54 @@ export default class QuizCreator extends Component {
 
     addQuestionHandler = e => {
         e.preventDefault();
-    
+
+        const quiz = this.state.quiz.concat();
+        const index = quiz.length + 1;
+
+        const questionItem = {
+            question: this.state.formControls.question.value,
+            id: index,
+            rightAnswerId: this.state.rightAnswerId,
+            answers: [
+                { text: this.state.formControls.option1.value, id: this.state.formControls.option1.id },
+                { text: this.state.formControls.option2.value, id: this.state.formControls.option2.id },
+                { text: this.state.formControls.option3.value, id: this.state.formControls.option3.id },
+                { text: this.state.formControls.option4.value, id: this.state.formControls.option4.id }
+            ]
+        }
+
+        quiz.push(questionItem)
+        this.setState({
+            quiz,
+            isFormValid: false,
+            rightAnswerId: 1,
+            formControls: createFormControls()
+        })
+
     }
-    createQuizHandler = () => { }
-    selectChangeHandler = (e) => {
+    createQuizHandler = async event => {
+        event.preventDefault();
+
+        try {
+            await axios.post('/quizes.json', this.state.quiz)
+
+            this.setState({
+                quiz: [],
+                isFormValid: false,
+                rightAnswerId: 1,
+                formControls: createFormControls()
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    selectChangeHandler = e => {
         this.setState({ rightAnswerId: +e.target.value })
     }
+
+    
+
     render() {
 
         const select = <Select

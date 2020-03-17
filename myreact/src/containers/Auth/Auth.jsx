@@ -3,6 +3,7 @@ import './Auth.css'
 import Button from '../../components/UI/Button/Button'
 import Input from '../../components/UI/input/Input'
 import is from 'is_js'
+import axios from 'axios'
 
 export default class Auth extends React.Component {
     state = {
@@ -36,8 +37,31 @@ export default class Auth extends React.Component {
     }
 
 
-    registerHandler = () => { }
-    loginHandler = () => { }
+    registerHandler = async () => {
+        const authData = {
+            email: this.state.formControls.email.value,
+            password: this.state.formControls.password.value,
+            returnSecureToken: true,
+        }
+        try {
+            const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBtl51uvOgr_R-GSjlj9puKtasevDRqoiQ', authData)
+            console.log(response.data)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    loginHandler = async () => {  
+        const authData = {
+        email: this.state.formControls.email.value,
+        password: this.state.formControls.password.value,
+        returnSecureToken: true,
+    }
+    try {
+        const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBtl51uvOgr_R-GSjlj9puKtasevDRqoiQ', authData)
+        console.log(response.data)
+    } catch (e) {
+        console.log(e)
+    } }
     submitHandler = (event) => event.preventDefault();
 
     validateControl = (value, validation) => {
@@ -75,7 +99,7 @@ export default class Auth extends React.Component {
         }, [])
         let isAllFormsValid = arrWithValidation.every(elem => elem === true)
 
-        if (isAllFormsValid) { isFormValid = true } 
+        if (isAllFormsValid) { isFormValid = true }
 
 
         this.setState({ formControls, isFormValid })
